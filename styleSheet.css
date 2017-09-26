@@ -1,0 +1,28 @@
+header{
+    text-align: center;
+    color: white;
+    background-color: black;
+    height: 110px;
+}
+
+#table th {
+    width: 100px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 1px 15px;
+}
+
+
+#listDiv {
+    background-color: #C4C4C4;
+    text-align:center;
+    align-items: center;
+    width:600;
+    float:left;
+}
+#formDiv{
+    text-align:center;
+    align-items: center;
+    width:600;
+    float:left;
+}

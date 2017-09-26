@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="styleSheet.css" />
+</head>
+
+<body>
+    <header>
+        <h1>通讯录</h1>
+        <p>
+            <h3>通讯信息增删改查Web程序</h3>
+        </p>
+    </header>
+    <div id="listDiv">
+
+        <table id="table">
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>电话号码</th>
+                <th>住址</th>
+            </tr>
+        </table>
+    </div>
+    <div id="formDiv">
+        <form id="form" method="post" target="nm_iframe">
+            <table id="formTable">
+                <tr>
+                    <td>
+                        姓名：<input id="nameText" type="text" required="required" /><br /><br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        年龄：
+                        <input id="ageText" type="text" required="required" /><br /><br />
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        性别：
+                        <input id="sexText" type="text" required="required" /><br /><br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        邮箱：
+                        <input id="addressText" type="text" required="required" /><br /><br />
+                    </td>
+                </tr>
+                <tr valign="middle">
+                    <td>
+                        电话：
+                        <input id="telText" type="text" required="required" /><br /><br />
+                    </td>
+                </tr>
+
+            </table>
+            <input id="submit" type="submit" value="提交" onclick="addRow()" />
+        </form>
+    </div>
+    <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
+    
+    <script src="tableController.js"></script>
+</body>
+
+</html>
