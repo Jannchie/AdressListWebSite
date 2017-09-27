@@ -9,7 +9,6 @@
 </head>
 
 <body>
-
     <header>
         <h1>通讯录</h1>
         <p>
@@ -19,27 +18,27 @@
     <div id="mainDiv">
 
         <div id="listDiv">
-            <table id="table">
+            <table id="addressList">
                 <tr>
                     <th>姓名</th>
                     <th>年龄</th>
                     <th>性别</th>
                     <th>电话号码</th>
-                    <th>住址</th>
+                    <th>邮箱</th>
                 </tr>
             </table>
         </div>
 
 
-        <div id="formDiv">
-            <form action="" method="post" target="nm_iframe" onsubmit="return addRow()">
+        <div id="formDiv" class="form">
+            <form action="" method="post" target="nm_iframe" onsubmit="addRow()">
                 <fieldset>
-                    <legend>Personal information</legend>
+                    <legend>添加信息</legend>
                     <table id="formTable">
                         <tr>
                             <td>
                                 姓名：
-                                <input id="nameText" type="text" required="required"autofocus="on"/><br /><br />
+                                <input id="nameText" type="text" required="required" autofocus="on" /><br /><br />
                             </td>
                         </tr>
                         <tr>
@@ -51,16 +50,16 @@
                         <tr>
                             <td>
                                 性别：
-                                <input id="sexText" type="text" required="required"pattern="[男女]$"/><br /><br />
+                                <input id="sexText" type="text" required="required" pattern="[男女]$" /><br /><br />
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 邮箱：
-                                <input id="addressText" type="email" required="required"/><br /><br />
+                                <input id="addressText" type="email" required="required" /><br /><br />
                             </td>
                         </tr>
-                        <tr valign="middle">
+                        <tr>
                             <td>
                                 电话：
                                 <input id="telText" type="tel" required="required" /><br /><br />
@@ -75,6 +74,22 @@
                 </fieldset>
             </form>
             <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
+        </div>
+        <div id="deleteForm" class="Form">
+            <form action="" method="post" target="nm_iframe" onsubmit="deleteRow()">
+                <fieldset>
+                    <legend>删除信息</legend>
+                    待删除者的姓名：<input id="deleteName" type="text" />
+                    <input id="deleteButton" type="submit" value="提交" />
+                </fieldset>
+            </form>
+            <form action="" method="post" target="nm_iframe" onsubmit="deleteRow()">
+                <fieldset>
+                    <legend>删除信息</legend>
+                    待删除者的姓名：<input id="deleteName" type="text" />
+                    <input id="deleteButton" type="submit" value="提交" />
+                </fieldset>
+            </form>
         </div>
     </div>
     <script src="tableController.js"></script>

@@ -1,27 +1,10 @@
-function validate(){
-    var name = document.getElementById("nameText");
-    var age = document.getElementById("ageText");
-    var sex = document.getElementById("sexText");
-    var tel = document.getElementById("telText");
-    var adr = document.getElementById("addressText");
-    if(name.value == null||name.value == ""||
-    age.value == null||age.value == ""||
-    sex.value == null||sex.value == ""||
-    tel.value == null||tel.value == ""||
-    adr.value == null||adr.value == ""){
-        alert("有项目为空");
-        return false;
-    }
-    addRow();
-}
-
 function addRow() {
     var name = document.getElementById("nameText");
     var age = document.getElementById("ageText");
     var sex = document.getElementById("sexText");
     var tel = document.getElementById("telText");
     var adr = document.getElementById("addressText");
-    var table = document.getElementById("table");
+    var table = document.getElementById("addressList");
     var tr = document.createElement("tr");
     var array = [name.value, age.value, sex.value, tel.value, adr.value];
     for (i = 0; i < 5; i++) {
@@ -31,8 +14,42 @@ function addRow() {
         tr.appendChild(td);
         table.appendChild(tr);
     }
-    return true;
-}
-function deleteRow() {
 
+}
+
+/** 
+ * 遍历表格内容返回数组
+ * @param  Int   id 表格id
+ * @return Array
+ */
+function getTableContent(id) {
+    var mytable = document.getElementById(id);
+    var data = [];
+    for (var i = 0, rows = mytable.rows.length; i < rows; i++) {
+        for (var j = 0, cells = mytable.rows[i].cells.length; j < cells; j++) {
+            if (!data[i]) {
+                data[i] = new Array();
+            }
+            data[i][j] = mytable.rows[i].cells[j].innerHTML;
+        }
+    }
+    return data;
+}
+
+
+function getTableRowsLength(id) {
+    var mytable = document.getElementById(id);
+    return mytable.rows.length;
+}
+
+function deleteRow() {
+    var data = getTableContent("addressList");
+    var rowNum = getTableRowsLength("addressList");
+    for (i = rowNum-1; i > 0; i--) {
+        if (data[i][0] == document.getElementById("deleteName").value){
+            document.getElementById('addressList').deleteRow(i);
+        }
+    }
+
+    alert("删除完了");
 }
