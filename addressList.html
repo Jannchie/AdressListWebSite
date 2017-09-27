@@ -28,7 +28,8 @@
                 </tr>
             </table>
         </div>
-
+        
+        <br>
 
         <div id="formDiv" class="form">
             <form action="" method="post" target="nm_iframe" onsubmit="addRow()">
@@ -62,7 +63,7 @@
                         <tr>
                             <td>
                                 电话：
-                                <input id="telText" type="tel" required="required" /><br /><br />
+                                <input id="telText" type="text" maxlength="11" pattern="^(0|86|17951)?1[0-9]{10}" required="required" /><br /><br />
                             </td>
                         </tr>
                         <tr>

@@ -36,20 +36,28 @@ function getTableContent(id) {
     return data;
 }
 
-
+/**
+ * 获得表格长度
+ * @param id 表格ID
+ * @return 表格长度
+ */
 function getTableRowsLength(id) {
     var mytable = document.getElementById(id);
     return mytable.rows.length;
 }
-
+/**
+ * 删除一行信息
+ */
 function deleteRow() {
     var data = getTableContent("addressList");
     var rowNum = getTableRowsLength("addressList");
     for (i = rowNum-1; i > 0; i--) {
         if (data[i][0] == document.getElementById("deleteName").value){
             document.getElementById('addressList').deleteRow(i);
+            var flag = true;
         }
     }
-
-    alert("删除完了");
+    if(!flag){
+        alert("未找到相应信息！");
+    }
 }
