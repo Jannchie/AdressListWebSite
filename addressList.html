@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
@@ -8,64 +9,74 @@
 </head>
 
 <body>
+
     <header>
         <h1>通讯录</h1>
         <p>
             <h3>通讯信息增删改查Web程序</h3>
         </p>
     </header>
-    <div id="listDiv">
+    <div id="mainDiv">
 
-        <table id="table">
-            <tr>
-                <th>姓名</th>
-                <th>年龄</th>
-                <th>性别</th>
-                <th>电话号码</th>
-                <th>住址</th>
-            </tr>
-        </table>
-    </div>
-    <div id="formDiv">
-        <form id="form" method="post" target="nm_iframe">
-            <table id="formTable">
+        <div id="listDiv">
+            <table id="table">
                 <tr>
-                    <td>
-                        姓名：<input id="nameText" type="text" required="required" /><br /><br />
-                    </td>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                    <th>性别</th>
+                    <th>电话号码</th>
+                    <th>住址</th>
                 </tr>
-                <tr>
-                    <td>
-                        年龄：
-                        <input id="ageText" type="text" required="required" /><br /><br />
-
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        性别：
-                        <input id="sexText" type="text" required="required" /><br /><br />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        邮箱：
-                        <input id="addressText" type="text" required="required" /><br /><br />
-                    </td>
-                </tr>
-                <tr valign="middle">
-                    <td>
-                        电话：
-                        <input id="telText" type="text" required="required" /><br /><br />
-                    </td>
-                </tr>
-
             </table>
-            <input id="submit" type="submit" value="提交" onclick="addRow()" />
-        </form>
+        </div>
+
+
+        <div id="formDiv">
+            <form action="" method="post" target="nm_iframe" onsubmit="return addRow()">
+                <fieldset>
+                    <legend>Personal information</legend>
+                    <table id="formTable">
+                        <tr>
+                            <td>
+                                姓名：
+                                <input id="nameText" type="text" required="required"autofocus="on"/><br /><br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                年龄：
+                                <input id="ageText" type="number" required="required" min="5" max="130" /><br /><br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                性别：
+                                <input id="sexText" type="text" required="required"pattern="[男女]$"/><br /><br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                邮箱：
+                                <input id="addressText" type="email" required="required"/><br /><br />
+                            </td>
+                        </tr>
+                        <tr valign="middle">
+                            <td>
+                                电话：
+                                <input id="telText" type="tel" required="required" /><br /><br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="submit" type="submit" value="提交" />
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </form>
+            <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
+        </div>
     </div>
-    <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
-    
     <script src="tableController.js"></script>
 </body>
 

@@ -1,28 +1,42 @@
 header{
     text-align: center;
     color: white;
-    background-color: black;
+    background-color: #3C8CD6;
     height: 110px;
+    padding-top: 1px;
+    padding-bottom: 15px;
 }
 
-#table th {
-    width: 100px;
+#table {
+    width:100%;
     height: 30px;
-    border: 1px solid black;
-    border-radius: 1px 15px;
+    border: 2px solid #FFFFFF;
+    border-radius: 5px 5px;
 }
 
+#mainDiv {
+    width: 60%;
+    background-color: #E1E6F3;
+    text-align: center; 
+    position: absolute;
+    left:20%; 
+    top:160px;
+}
 
 #listDiv {
-    background-color: #C4C4C4;
+    background-color: #F4F3F5;
     text-align:center;
     align-items: center;
-    width:600;
-    float:left;
+    width:80%;
+    margin-top: 10px;
+    margin-left:auto;
+    margin-right:auto;
 }
 #formDiv{
-    text-align:center;
-    align-items: center;
-    width:600;
-    float:left;
+    width: 30%;
+    margin-left:auto;
+    margin-right: auto;
+}
+#formDiv td{
+    text-align: left;
 }
