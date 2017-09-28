@@ -25,45 +25,94 @@
                     <th>性别</th>
                     <th>电话号码</th>
                     <th>邮箱</th>
+                    <th>操作</th>
                 </tr>
             </table>
         </div>
-        
-        <br>
 
-        <div id="formDiv" class="form">
+        <br>
+        <div id="mDiv" class="form">
+                <form id="modify" action="" method="post" target="nm_iframe">
+                    <fieldset>
+                        <legend>修改信息</legend>
+                        <table id="mformTable">
+                            <tr>
+                                <!-- required="required" -->
+                                <td>
+                                    姓名：
+                                    <input id="mnameText" type="text" autofocus="on" /><br /><br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    年龄：
+                                    <input id="mageText" type="number" style="width:170px" min="5" max="130" /><br /><br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    性别：
+                                    <input id="msexText" type="text" pattern="[男女]$" /><br /><br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    邮箱：
+                                    <input id="maddressText" type="email" /><br /><br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    电话：
+                                    <input id="mtelText" type="text" maxlength="11" pattern="^(0|86|17951)?1[0-9]{10}" /><br /><br
+                                    />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input id="msubmit" type="submit" value="提交" />
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </form>
+            </div>
+
+        <div class="form">
             <form action="" method="post" target="nm_iframe" onsubmit="addRow()">
                 <fieldset>
                     <legend>添加信息</legend>
                     <table id="formTable">
                         <tr>
+                            <!-- required="required" -->
                             <td>
                                 姓名：
-                                <input id="nameText" type="text" required="required" autofocus="on" /><br /><br />
+                                <input id="nameText" type="text" autofocus="on" /><br /><br />
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 年龄：
-                                <input id="ageText" type="number" required="required" min="5" max="130" /><br /><br />
+                                <input id="ageText" type="number" style="width:170px" min="5" max="130" /><br /><br />
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 性别：
-                                <input id="sexText" type="text" required="required" pattern="[男女]$" /><br /><br />
+                                <input id="sexText" type="text" pattern="[男女]$" /><br /><br />
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 邮箱：
-                                <input id="addressText" type="email" required="required" /><br /><br />
+                                <input id="addressText" type="email" /><br /><br />
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 电话：
-                                <input id="telText" type="text" maxlength="11" pattern="^(0|86|17951)?1[0-9]{10}" required="required" /><br /><br />
+                                <input id="telText" type="text" maxlength="11" pattern="^(0|86|17951)?1[0-9]{10}" /><br /><br
+                                />
                             </td>
                         </tr>
                         <tr>
@@ -74,24 +123,8 @@
                     </table>
                 </fieldset>
             </form>
-            <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
         </div>
-        <div id="deleteForm" class="Form">
-            <form action="" method="post" target="nm_iframe" onsubmit="deleteRow()">
-                <fieldset>
-                    <legend>删除信息</legend>
-                    待删除者的姓名：<input id="deleteName" type="text" />
-                    <input id="deleteButton" type="submit" value="提交" />
-                </fieldset>
-            </form>
-            <form action="" method="post" target="nm_iframe" onsubmit="deleteRow()">
-                <fieldset>
-                    <legend>删除信息</legend>
-                    待删除者的姓名：<input id="deleteName" type="text" />
-                    <input id="deleteButton" type="submit" value="提交" />
-                </fieldset>
-            </form>
-        </div>
+        <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
     </div>
     <script src="tableController.js"></script>
 </body>
