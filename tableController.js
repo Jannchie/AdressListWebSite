@@ -36,11 +36,21 @@ function addRow() {
     td.appendChild(deleteButton);    
     td.appendChild(modifyButton);    
     tr.appendChild(td);
-    
 }
 
 function displayModifyForm(obj){
-    document.getElementById("mDiv").style.display="inline";
+    var name = document.getElementById("mnameText");
+    var age = document.getElementById("mageText");
+    var sex = document.getElementById("msexText");
+    var tel = document.getElementById("mtelText");
+    var adr = document.getElementById("maddressText");
+    var table = document.getElementById("addressList");
+    name.value = obj.parentNode.parentNode.cells[0].innerHTML;
+    age.value = obj.parentNode.parentNode.cells[1].innerHTML;
+    sex.value = obj.parentNode.parentNode.cells[2].innerHTML;
+    tel.value = obj.parentNode.parentNode.cells[3].innerHTML;
+    adr.value = obj.parentNode.parentNode.cells[4].innerHTML;
+    document.getElementById("mDiv").style.display="block";
     document.getElementById("modify").onsubmit= function(){
         modify(obj);
     }
@@ -58,7 +68,6 @@ function modify(obj){
     }
     document.getElementById("mDiv").style.display="none";
 }
-
 
 /** 
  * 遍历表格内容返回数组
